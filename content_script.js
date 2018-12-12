@@ -1,19 +1,11 @@
 (function() {
-
-    init();
-
-    let elements = [
-        '#boxComentarios', //g1
-        'section.box.social.comments' //extra
-    ]
-
-    elements.forEach((el, ix) => {
+    reset()
+    rules.forEach((el, ix) => {
         removeElement(document.querySelector(el))
     })
-
 })();
 
-function init() {
+function reset() {
     chrome.runtime.sendMessage({greeting: "init"}, function(response) {
         console.log(response);
     });
@@ -25,5 +17,7 @@ function removeElement(element) {
         chrome.runtime.sendMessage({greeting: "removed"}, function(response) {
             console.log(response);
         });
+
+        return;
     }
 }

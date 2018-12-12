@@ -6,7 +6,8 @@ chrome.runtime.onMessage.addListener(
         }
 
         if (request.greeting == "removed"){
-            chrome.browserAction.setBadgeText({text: "ok"});
+            chrome.browserAction.setBadgeText({text: "✓"});
             sendResponse({farewell: "done"});
         }
-    });
+    }
+);

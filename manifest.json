@@ -1,13 +1,13 @@
 {
-	"name": "G1 Comment Remover",
+	"name": "Removedor de Comentários",
 	"version": "1.0",
-	"description": "Remove os comentários das páginas do G1",
+	"description": "Remove blocos de comentários de sites com comentaristas polêmicos",
 	"permissions": ["tabs", "<all_urls>"],
 	"icons": {
 		"96": "icon96.png"
 	},
 	"browser_action": {
-		"default_title": "G1 Comment Remover"
+		"default_title": "Removedor de Comentários"
 	},
 	"background": {
 		"scripts": ["background.js"],
@@ -15,9 +15,9 @@
 	},
 	"content_scripts": [
 		{
-			"matches": [ "*://*.globo.com/*" ],
+			"matches": [ "<all_urls>" ],
 			"run_at": "document_end",
-			"js": ["/content_script.js"]
+			"js": ["rules.js", "content_script.js"]
 		}
 	],
 	"manifest_version": 2
