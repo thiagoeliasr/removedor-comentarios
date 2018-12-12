@@ -1,0 +1,24 @@
+{
+	"name": "G1 Comment Remover",
+	"version": "1.0",
+	"description": "Remove os comentários das páginas do G1",
+	"permissions": ["tabs", "<all_urls>"],
+	"icons": {
+		"96": "icon96.png"
+	},
+	"browser_action": {
+		"default_title": "G1 Comment Remover"
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": [ "*://*.globo.com/*" ],
+			"run_at": "document_end",
+			"js": ["/content_script.js"]
+		}
+	],
+	"manifest_version": 2
+}
